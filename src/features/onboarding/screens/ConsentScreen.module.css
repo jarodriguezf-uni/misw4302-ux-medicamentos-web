@@ -1,0 +1,89 @@
+.screen {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px var(--gutter-xl) 64px;
+}
+
+.card {
+  width: min(100%, 640px);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 10px;
+  background: var(--color-surface);
+  box-shadow: 0 2px 8px rgb(26 28 28 / 10%);
+}
+
+.card h1 {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-body);
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  accent-color: var(--color-primary);
+}
+
+.checkboxLabel {
+  color: var(--color-text);
+  font-size: var(--font-size-body);
+}
+
+.submitButton {
+  align-self: flex-start;
+  height: var(--button-height);
+  padding: 0 28px;
+  border: 0;
+  border-radius: var(--button-radius);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  cursor: pointer;
+  font-size: var(--font-size-button);
+  font-weight: 600;
+}
+
+.submitButton:hover {
+  background: var(--color-on-primary-container);
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.note {
+  margin: 16px 0 0;
+  color: var(--color-text-faint);
+  font-size: 11px;
+}
+
+.step {
+  font-size: var(--font-size-nav);
+  font-weight: 500;
+}
