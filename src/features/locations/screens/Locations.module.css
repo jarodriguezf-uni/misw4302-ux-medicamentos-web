@@ -1,0 +1,246 @@
+.screen {
+  min-height: 100%;
+}
+
+.main,
+.detailMain {
+  width: calc(100% - (2 * var(--gutter-xl)));
+  max-width: 1312px;
+  margin-inline: auto;
+  padding-top: 40px;
+}
+
+.pageTitle {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  align-items: start;
+  gap: 32px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pointCard {
+  width: 100%;
+  min-height: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 24px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 10px;
+  background: var(--color-surface);
+  box-shadow: 0 2px 8px rgb(26 28 28 / 8%);
+  color: var(--color-text);
+  text-align: left;
+  font: inherit;
+}
+
+button.pointCard {
+  cursor: pointer;
+}
+
+button.pointCard:hover {
+  border-color: var(--color-primary);
+}
+
+button.pointCard:focus-visible {
+  outline: 3px solid var(--color-primary-container);
+  outline-offset: 2px;
+}
+
+.pointHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pointName {
+  font-size: var(--font-size-body);
+  font-weight: 700;
+}
+
+.pointDistance {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-caption);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.available {
+  background: var(--color-success-bg);
+  color: var(--color-success-fg);
+}
+
+.unknown {
+  background: var(--color-warning-bg);
+  color: var(--color-warning-fg);
+}
+
+.mapPlaceholder {
+  min-height: 224px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 10px;
+  background: var(--color-surface);
+  box-shadow: 0 2px 8px rgb(26 28 28 / 8%);
+  color: var(--color-text-muted);
+}
+
+.mapPlaceholder svg {
+  color: var(--color-text-muted);
+}
+
+.mapLabel {
+  font-size: var(--font-size-body);
+}
+
+.detailCard {
+  width: min(100%, 760px);
+  padding: 40px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 10px;
+  background: var(--color-surface);
+  box-shadow: 0 2px 8px rgb(26 28 28 / 10%);
+}
+
+.detailCard h1 {
+  margin: 0 0 28px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  margin-bottom: 24px;
+}
+
+.detailField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.detailField dt {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-caption);
+}
+
+.detailField dd {
+  margin: 0;
+  font-size: var(--font-size-body);
+  font-weight: 700;
+}
+
+.availabilityBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 14px;
+  border-radius: 15px;
+  background: var(--color-success-bg);
+  color: var(--color-success-fg);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.updatedRow {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 8px;
+  color: var(--color-text);
+  font-size: var(--font-size-caption);
+  margin-bottom: 20px;
+}
+
+.updatedRow svg {
+  color: #e39a2a;
+  flex-shrink: 0;
+}
+
+.infoNote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-caption);
+}
+
+.infoNote svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1199px) {
+  .main,
+  .detailMain {
+    width: calc(100% - (2 * var(--gutter-lg)));
+  }
+}
+
+@media (max-width: 767px) {
+  .main,
+  .detailMain {
+    width: 100%;
+    padding: 32px var(--gutter-md) 48px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .detailGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 479px) {
+  .main,
+  .detailMain {
+    padding-inline: var(--gutter-sm);
+  }
+
+  .pageTitle {
+    font-size: 22px;
+  }
+
+  .detailCard {
+    padding: 24px;
+  }
+}
