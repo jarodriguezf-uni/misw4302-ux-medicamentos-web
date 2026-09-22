@@ -1,0 +1,128 @@
+.screen {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 72px var(--gutter-xl) 64px;
+}
+
+.card {
+  width: min(100%, 480px);
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 40px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 10px;
+  background: var(--color-surface);
+  box-shadow: 0 2px 8px rgb(26 28 28 / 10%);
+}
+
+.card h1 {
+  margin-bottom: 34px;
+  font-size: var(--font-size-hero-title);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+  font-weight: 500;
+}
+
+.field input {
+  width: 100%;
+  height: var(--button-height);
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background: var(--color-field-background);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--font-size-body);
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.field input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-container);
+}
+
+.submitButton {
+  height: var(--button-height);
+  margin-top: 2px;
+  border: 0;
+  border-radius: var(--button-radius);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  cursor: pointer;
+  font-size: var(--font-size-button);
+  font-weight: 600;
+}
+
+.submitButton:hover {
+  background: var(--color-on-primary-container);
+}
+
+.submitButton:focus-visible,
+.recoveryButton:focus-visible {
+  outline: 3px solid var(--color-primary-container);
+  outline-offset: 2px;
+}
+
+.recoveryButton {
+  align-self: center;
+  margin-top: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-primary);
+  cursor: default;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .main {
+    align-items: flex-start;
+    padding: 48px var(--gutter-md);
+  }
+}
+
+@media (max-width: 479px) {
+  .main {
+    padding: 24px var(--gutter-sm);
+  }
+
+  .card {
+    min-height: 0;
+    padding: 36px 24px;
+  }
+
+  .card h1 {
+    font-size: 24px;
+  }
+}
