@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { createBrowserRouter } from "react-router-dom";
+import { AccountPage } from "../features/account/screens/AccountPage";
 import { LoginPage } from "../features/auth/screens/LoginPage";
 import { PublicHomePage } from "../features/auth/screens/PublicHomePage";
 import { DashboardPage } from "../features/dashboard/screens/DashboardPage";
@@ -57,6 +58,7 @@ const realScreens: Record<string, ReactNode> = {
   "/medicines/treatment": <TreatmentPage />,
   "/locations": <LocationsPage />,
   "/locations/detail": <LocationDetailPage />,
+  "/account": <AccountPage />,
 };
 
 export const appRouter = createBrowserRouter(
