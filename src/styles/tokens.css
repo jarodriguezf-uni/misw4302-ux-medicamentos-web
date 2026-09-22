@@ -1,0 +1,51 @@
+/* Tokens contra Figma oX2LEnqkcmrH5FwXSHa2kz, serie 62:*. */
+:root {
+  --color-primary: #127e76;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #d7f3ef;
+  --color-on-primary-container: #00443d;
+
+  --color-background: #f7f7f7;
+  --color-surface: #ffffff;
+  --color-text: #1a1c1c;
+  --color-text-secondary: #49454f;
+  --color-text-muted: #79747e;
+
+  --color-outline: #8f9998;
+  --color-outline-variant: #dde4e3;
+  --color-field-background: #eef1f0;
+
+  --color-success-bg: #b6f2cf;
+  --color-success-fg: #00210f;
+  --color-success-text: #278651;
+  --color-warning-bg: #ffe0b0;
+  --color-warning-fg: #2a1700;
+  --color-danger-bg: #ffdad4;
+  --color-danger-fg: #410e0b;
+
+  --color-scrim: #000000;
+  --color-scrim-opacity: 0.45;
+
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --font-size-hero-title: 26px;
+  --font-size-brand: 16px;
+  --font-size-nav: 14px;
+  --font-size-body: 14px;
+  --font-size-button: 15px;
+  --font-size-caption: 12px;
+
+  --header-height: 64px;
+  --button-height: 44px;
+  --button-radius: 22px;
+
+  --gutter-xl: 64px; /* >=1200px */
+  --gutter-lg: 32px; /* 768-1199px */
+  --gutter-md: 20px; /* <768px */
+  --gutter-sm: 16px; /* <480px */
+
+  --breakpoint-xl: 1200px;
+  --breakpoint-lg: 768px;
+  --breakpoint-sm: 480px;
+}
