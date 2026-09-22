@@ -1,6 +1,12 @@
+import type { ReactNode } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { LoginPage } from "../features/auth/screens/LoginPage";
 import { PublicHomePage } from "../features/auth/screens/PublicHomePage";
+import { SignupScreen } from "../features/onboarding/screens/SignupScreen";
+import { VerifyEmailScreen } from "../features/onboarding/screens/VerifyEmailScreen";
+import { ConsentScreen } from "../features/onboarding/screens/ConsentScreen";
+import { EpsScreen } from "../features/onboarding/screens/EpsScreen";
+import { EpsStatusScreen } from "../features/onboarding/screens/EpsStatusScreen";
 import { PlaceholderScreen } from "../shared/components/PlaceholderScreen";
 
 interface RouteDefinition {
@@ -29,21 +35,26 @@ export const routeDefinitions: RouteDefinition[] = [
   { path: "/account", frameLabel: "15", name: "Cuenta y privacidad", visualNodeId: "62:661", checkpoint: "W6" },
 ];
 
+const realScreens: Record<string, ReactNode> = {
+  "/": <PublicHomePage />,
+  "/login": <LoginPage />,
+  "/signup": <SignupScreen />,
+  "/signup/verify-email": <VerifyEmailScreen />,
+  "/signup/consent": <ConsentScreen />,
+  "/signup/eps": <EpsScreen />,
+  "/signup/eps/status": <EpsStatusScreen />,
+};
+
 export const appRouter = createBrowserRouter(
   routeDefinitions.map((route) => ({
     path: route.path,
-    element:
-      route.path === "/" ? (
-        <PublicHomePage />
-      ) : route.path === "/login" ? (
-        <LoginPage />
-      ) : (
-        <PlaceholderScreen
-          frameLabel={route.frameLabel}
-          name={route.name}
-          visualNodeId={route.visualNodeId}
-          checkpoint={route.checkpoint}
-        />
-      ),
+    element: realScreens[route.path] ?? (
+      <PlaceholderScreen
+        frameLabel={route.frameLabel}
+        name={route.name}
+        visualNodeId={route.visualNodeId}
+        checkpoint={route.checkpoint}
+      />
+    ),
   })),
 );
