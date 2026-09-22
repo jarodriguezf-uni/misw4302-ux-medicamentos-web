@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
+import { LoginPage } from "../features/auth/screens/LoginPage";
+import { PublicHomePage } from "../features/auth/screens/PublicHomePage";
 import { PlaceholderScreen } from "../shared/components/PlaceholderScreen";
 
 interface RouteDefinition {
@@ -30,13 +32,18 @@ export const routeDefinitions: RouteDefinition[] = [
 export const appRouter = createBrowserRouter(
   routeDefinitions.map((route) => ({
     path: route.path,
-    element: (
-      <PlaceholderScreen
-        frameLabel={route.frameLabel}
-        name={route.name}
-        visualNodeId={route.visualNodeId}
-        checkpoint={route.checkpoint}
-      />
-    ),
+    element:
+      route.path === "/" ? (
+        <PublicHomePage />
+      ) : route.path === "/login" ? (
+        <LoginPage />
+      ) : (
+        <PlaceholderScreen
+          frameLabel={route.frameLabel}
+          name={route.name}
+          visualNodeId={route.visualNodeId}
+          checkpoint={route.checkpoint}
+        />
+      ),
   })),
 );
