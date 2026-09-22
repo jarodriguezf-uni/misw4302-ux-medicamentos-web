@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import { LoginPage } from "../features/auth/screens/LoginPage";
 import { PublicHomePage } from "../features/auth/screens/PublicHomePage";
 import { DashboardPage } from "../features/dashboard/screens/DashboardPage";
+import { LocationDetailPage } from "../features/locations/screens/LocationDetailPage";
+import { LocationsPage } from "../features/locations/screens/LocationsPage";
 import { MedicineDetailPage } from "../features/medicines/screens/MedicineDetailPage";
 import { MedicineSearchPage } from "../features/medicines/screens/MedicineSearchPage";
 import { PrescriptionPage } from "../features/medicines/screens/PrescriptionPage";
@@ -53,6 +55,8 @@ const realScreens: Record<string, ReactNode> = {
   "/medicines/detail": <MedicineDetailPage />,
   "/medicines/prescription": <PrescriptionPage />,
   "/medicines/treatment": <TreatmentPage />,
+  "/locations": <LocationsPage />,
+  "/locations/detail": <LocationDetailPage />,
 };
 
 export const appRouter = createBrowserRouter(
