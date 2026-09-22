@@ -2,6 +2,11 @@ import type { ReactNode } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { LoginPage } from "../features/auth/screens/LoginPage";
 import { PublicHomePage } from "../features/auth/screens/PublicHomePage";
+import { DashboardPage } from "../features/dashboard/screens/DashboardPage";
+import { MedicineDetailPage } from "../features/medicines/screens/MedicineDetailPage";
+import { MedicineSearchPage } from "../features/medicines/screens/MedicineSearchPage";
+import { PrescriptionPage } from "../features/medicines/screens/PrescriptionPage";
+import { TreatmentPage } from "../features/medicines/screens/TreatmentPage";
 import { SignupScreen } from "../features/onboarding/screens/SignupScreen";
 import { VerifyEmailScreen } from "../features/onboarding/screens/VerifyEmailScreen";
 import { ConsentScreen } from "../features/onboarding/screens/ConsentScreen";
@@ -43,6 +48,11 @@ const realScreens: Record<string, ReactNode> = {
   "/signup/consent": <ConsentScreen />,
   "/signup/eps": <EpsScreen />,
   "/signup/eps/status": <EpsStatusScreen />,
+  "/desktop": <DashboardPage />,
+  "/medicines": <MedicineSearchPage />,
+  "/medicines/detail": <MedicineDetailPage />,
+  "/medicines/prescription": <PrescriptionPage />,
+  "/medicines/treatment": <TreatmentPage />,
 };
 
 export const appRouter = createBrowserRouter(
