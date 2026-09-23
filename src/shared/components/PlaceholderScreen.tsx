@@ -18,7 +18,7 @@ export function PlaceholderScreen({
       <header className={styles.header}>
         <span className={styles.title}>Medicamentos</span>
       </header>
-      <main className={styles.body}>
+      <main className={styles.body} id="main-content">
         <span className={styles.name}>
           {frameLabel} — {name}
         </span>

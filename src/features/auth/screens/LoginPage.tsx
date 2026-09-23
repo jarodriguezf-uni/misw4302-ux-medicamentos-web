@@ -16,7 +16,7 @@ export function LoginPage() {
   return (
     <div className={styles.screen}>
       <AppHeader />
-      <main className={styles.main}>
+      <main className={styles.main} id="main-content">
         <section className={styles.card} aria-labelledby="login-title">
           <h1 id="login-title">Iniciar sesión</h1>
 
@@ -27,6 +27,7 @@ export function LoginPage() {
                 autoComplete="username"
                 name="identity"
                 onChange={(event) => setIdentity(event.target.value)}
+                required
                 type="text"
                 value={identity}
               />
@@ -38,6 +39,8 @@ export function LoginPage() {
                 autoComplete="current-password"
                 name="password"
                 onChange={(event) => setPassword(event.target.value)}
+                required
+                minLength={8}
                 type="password"
                 value={password}
               />

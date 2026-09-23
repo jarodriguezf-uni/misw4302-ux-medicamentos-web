@@ -11,7 +11,7 @@ export function TreatmentPage() {
   return (
     <div className={styles.screen}>
       <AuthenticatedHeader activeSection="medicines" />
-      <main className={styles.treatmentContent}>
+      <main className={styles.treatmentContent} id="main-content">
         <h1 className={styles.pageTitle}>Tu tratamiento</h1>
         <section className={styles.treatmentList} aria-label="Medicamentos">
           {treatments.map((treatment) => (

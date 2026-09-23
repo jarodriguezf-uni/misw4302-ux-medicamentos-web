@@ -20,7 +20,7 @@ export function AccountPage() {
   return (
     <div className={styles.screen}>
       <AuthenticatedHeader activeSection="account" />
-      <main className={styles.main}>
+      <main className={styles.main} id="main-content">
         <h1>Cuenta y privacidad</h1>
         <section className={styles.actions} aria-label="Opciones de la cuenta">
           {accountActions.map((action) => (
