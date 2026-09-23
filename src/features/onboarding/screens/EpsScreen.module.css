@@ -117,3 +117,23 @@
   font-size: var(--font-size-nav);
   font-weight: 500;
 }
+
+@media (max-width: 767px) {
+  .main {
+    padding: 32px var(--gutter-md);
+  }
+}
+
+@media (max-width: 479px) {
+  .main {
+    padding: 24px var(--gutter-sm);
+  }
+
+  .card {
+    padding: 28px 20px;
+  }
+
+  .card h1 {
+    font-size: 22px;
+  }
+}
