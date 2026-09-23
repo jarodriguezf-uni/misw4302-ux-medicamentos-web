@@ -24,7 +24,7 @@ export function MedicineSearchPage() {
   return (
     <div className={styles.screen}>
       <AuthenticatedHeader activeSection="medicines" />
-      <main className={styles.content}>
+      <main className={styles.content} id="main-content">
         <h1 className={styles.pageTitle}>Buscar medicamento</h1>
 
         <label className={styles.searchBox}>
@@ -42,6 +42,9 @@ export function MedicineSearchPage() {
         </label>
 
         <span className={styles.resultsLabel}>Resultados</span>
+        <span className="srOnly" role="status" aria-live="polite">
+          {results.length} resultados encontrados
+        </span>
         <section className={styles.list} aria-label="Resultados">
           {results.map((medicine) => (
             <button

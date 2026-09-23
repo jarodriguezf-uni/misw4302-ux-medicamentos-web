@@ -31,7 +31,7 @@ export function DashboardPage() {
   return (
     <div className={styles.screen}>
       <AuthenticatedHeader activeSection="desktop" />
-      <main className={styles.main}>
+      <main className={styles.main} id="main-content">
         <h1>Bienvenida, María</h1>
         <section className={styles.grid} aria-label="Accesos del escritorio">
           {shortcuts.map((shortcut) => (

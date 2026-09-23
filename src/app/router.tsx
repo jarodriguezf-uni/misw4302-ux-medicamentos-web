@@ -15,6 +15,7 @@ import { VerifyEmailScreen } from "../features/onboarding/screens/VerifyEmailScr
 import { ConsentScreen } from "../features/onboarding/screens/ConsentScreen";
 import { EpsScreen } from "../features/onboarding/screens/EpsScreen";
 import { EpsStatusScreen } from "../features/onboarding/screens/EpsStatusScreen";
+import { AccessibleRoute } from "../shared/components/AccessibleRoute";
 import { PlaceholderScreen } from "../shared/components/PlaceholderScreen";
 
 interface RouteDefinition {
@@ -64,13 +65,17 @@ const realScreens: Record<string, ReactNode> = {
 export const appRouter = createBrowserRouter(
   routeDefinitions.map((route) => ({
     path: route.path,
-    element: realScreens[route.path] ?? (
-      <PlaceholderScreen
-        frameLabel={route.frameLabel}
-        name={route.name}
-        visualNodeId={route.visualNodeId}
-        checkpoint={route.checkpoint}
-      />
+    element: (
+      <AccessibleRoute title={route.name}>
+        {realScreens[route.path] ?? (
+          <PlaceholderScreen
+            frameLabel={route.frameLabel}
+            name={route.name}
+            visualNodeId={route.visualNodeId}
+            checkpoint={route.checkpoint}
+          />
+        )}
+      </AccessibleRoute>
     ),
   })),
 );

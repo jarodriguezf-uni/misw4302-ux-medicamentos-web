@@ -50,8 +50,49 @@ button {
 
 a,
 button,
-input {
+input,
+select {
   -webkit-tap-highlight-color: transparent;
+}
+
+:where(a, button, input, select):focus-visible {
+  outline: 3px solid var(--color-primary-container);
+  outline-offset: 2px;
+}
+
+main h1[tabindex="-1"]:focus {
+  outline: none;
+}
+
+:where(button, input, select):disabled {
+  cursor: not-allowed;
+}
+
+:where(input, select):user-invalid {
+  border-color: var(--color-danger-fg);
+  box-shadow: 0 0 0 3px var(--color-danger-bg);
+}
+
+:where(a, button):not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.skipLink {
+  position: fixed;
+  z-index: 1000;
+  top: 8px;
+  left: 8px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-160%);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
 }
 
 .srOnly {
@@ -64,4 +105,15 @@ input {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
