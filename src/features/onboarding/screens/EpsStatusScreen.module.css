@@ -14,6 +14,7 @@
 
 .card {
   width: min(100%, 520px);
+  min-height: 270px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -52,6 +53,10 @@
 @media (max-width: 767px) {
   .main {
     padding: 32px var(--gutter-md);
+  }
+
+  .card {
+    min-height: auto;
   }
 }
 
