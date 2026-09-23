@@ -22,6 +22,10 @@ export function PrescriptionPage() {
               <dt>Cantidad</dt>
               <dd>30</dd>
             </div>
+            <div className={styles.summaryRow}>
+              <dt>Vigencia</dt>
+              <dd>12/2026</dd>
+            </div>
           </dl>
           <div className={styles.formulaFooter}>
             <span className={styles.validBadge}>✓ Fórmula vigente</span>
