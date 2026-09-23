@@ -16,21 +16,34 @@ export function EpsScreen() {
   return (
     <div className={styles.screen}>
       <AppHeader action={<span className={styles.step}>Paso 4 de 5</span>} />
-      <main className={styles.main}>
-        <section className={styles.card} aria-labelledby="eps-title">
+      <main className={styles.main} id="main-content">
+        <section
+          className={styles.card}
+          aria-busy={validating}
+          aria-labelledby="eps-title"
+        >
           <h1 id="eps-title">Vincular tu EPS</h1>
 
           <label className={styles.field}>
             <span>EPS</span>
-            <select value={eps} onChange={(event) => setEps(event.target.value)}>
+            <select
+              disabled={validating}
+              name="eps"
+              value={eps}
+              onChange={(event) => setEps(event.target.value)}
+            >
               <option value="Sanitas">Sanitas</option>
               <option value="Compensar">Compensar</option>
             </select>
           </label>
 
           {validating && (
-            <div className={styles.validatingRow}>
-              <span className={styles.spinner} />
+            <div
+              className={styles.validatingRow}
+              role="status"
+              aria-live="polite"
+            >
+              <span className={styles.spinner} aria-hidden="true" />
               <span>Validando la afiliación en línea...</span>
             </div>
           )}

@@ -15,7 +15,7 @@ export function ConsentScreen() {
   return (
     <div className={styles.screen}>
       <AppHeader action={<span className={styles.step}>Paso 3 de 5</span>} />
-      <main className={styles.main}>
+      <main className={styles.main} id="main-content">
         <section className={styles.card} aria-labelledby="consent-title">
           <h1 id="consent-title">Tratamiento de datos de salud</h1>
           <p className={styles.subtitle}>
@@ -29,6 +29,7 @@ export function ConsentScreen() {
                 className={styles.checkbox}
                 checked={accepted}
                 onChange={(event) => setAccepted(event.target.checked)}
+                required
               />
               <span className={styles.checkboxLabel}>
                 Autorizo el tratamiento de mis datos de salud
