@@ -83,7 +83,7 @@
 @media (max-width: 767px) {
   .main {
     width: 100%;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     align-content: center;
     gap: 40px;
     padding: 48px var(--gutter-md);
