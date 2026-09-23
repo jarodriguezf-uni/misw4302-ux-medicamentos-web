@@ -6,7 +6,7 @@ export function PrescriptionPage() {
   return (
     <div className={styles.screen}>
       <AuthenticatedHeader activeSection="medicines" />
-      <main className={styles.prescriptionMain}>
+      <main className={styles.prescriptionMain} id="main-content">
         <section className={styles.prescriptionCard}>
           <h1>Datos de la fórmula</h1>
           <dl className={styles.summaryRows}>

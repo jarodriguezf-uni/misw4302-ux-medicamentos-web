@@ -5,7 +5,7 @@ export function LocationDetailPage() {
   return (
     <div className={styles.screen}>
       <AuthenticatedHeader activeSection="locations" />
-      <main className={styles.detailMain}>
+      <main className={styles.detailMain} id="main-content">
         <section
           className={styles.detailCard}
           aria-labelledby="location-detail-title"
@@ -29,6 +29,8 @@ export function LocationDetailPage() {
 
           <div className={styles.updatedRow}>
             <svg
+              aria-hidden="true"
+              focusable="false"
               width="16"
               height="16"
               viewBox="0 0 24 24"
@@ -44,6 +46,8 @@ export function LocationDetailPage() {
 
           <p className={styles.infoNote}>
             <svg
+              aria-hidden="true"
+              focusable="false"
               width="14"
               height="14"
               viewBox="0 0 24 24"

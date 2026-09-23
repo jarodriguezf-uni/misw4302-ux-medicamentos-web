@@ -6,7 +6,7 @@ export function MedicineDetailPage() {
   return (
     <div className={styles.screen}>
       <AuthenticatedHeader activeSection="medicines" />
-      <main className={styles.detailContent}>
+      <main className={styles.detailContent} id="main-content">
         <h1 className={styles.pageTitle}>Losartán 50 mg</h1>
         <div className={styles.detailGrid}>
           <section className={styles.detailCard}>

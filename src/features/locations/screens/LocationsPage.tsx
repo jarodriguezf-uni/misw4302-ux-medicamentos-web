@@ -25,7 +25,7 @@ export function LocationsPage() {
   return (
     <div className={styles.screen}>
       <AuthenticatedHeader activeSection="locations" />
-      <main className={styles.main}>
+      <main className={styles.main} id="main-content">
         <h1 className={styles.pageTitle}>Dónde reclamar</h1>
         <div className={styles.layout}>
           <section className={styles.list} aria-label="Puntos en convenio">
@@ -70,6 +70,8 @@ export function LocationsPage() {
 
           <div className={styles.mapPlaceholder} aria-label="Mapa de puntos">
             <svg
+              aria-hidden="true"
+              focusable="false"
               width="32"
               height="32"
               viewBox="0 0 24 24"

@@ -10,10 +10,12 @@ export function VerifyEmailScreen() {
   return (
     <div className={styles.screen}>
       <AppHeader action={<span className={styles.step}>Paso 2 de 5</span>} />
-      <main className={styles.main}>
+      <main className={styles.main} id="main-content">
         <section className={styles.card} aria-labelledby="verify-email-title">
           <svg
+            aria-hidden="true"
             className={styles.icon}
+            focusable="false"
             width="32"
             height="32"
             viewBox="0 0 24 24"
@@ -31,6 +33,7 @@ export function VerifyEmailScreen() {
           <div className={styles.actions}>
             <ActionButton to="/signup/consent">Continuar</ActionButton>
             <button
+              aria-live="polite"
               type="button"
               className={`${actionButtonStyles.button} ${actionButtonStyles.outlined}`}
               onClick={() => setResent(true)}

@@ -13,7 +13,7 @@ export function PublicHomePage() {
           </Link>
         }
       />
-      <main className={styles.main}>
+      <main className={styles.main} id="main-content">
         <section className={styles.introduction}>
           <h1>Prepara tu reclamo desde el computador</h1>
           <p>

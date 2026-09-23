@@ -15,7 +15,7 @@ export function SignupScreen() {
   return (
     <div className={styles.screen}>
       <AppHeader action={<span className={styles.step}>Paso 1 de 5</span>} />
-      <main className={styles.main}>
+      <main className={styles.main} id="main-content">
         <section className={styles.card} aria-labelledby="signup-title">
           <h1 id="signup-title">Crear cuenta</h1>
 
@@ -24,6 +24,7 @@ export function SignupScreen() {
               <span>Tipo de documento</span>
               <select
                 name="documentType"
+                required
                 value={documentType}
                 onChange={(event) => setDocumentType(event.target.value)}
               >
@@ -38,24 +39,44 @@ export function SignupScreen() {
 
             <label className={styles.field}>
               <span>Documento</span>
-              <input name="document" type="text" />
+              <input
+                inputMode="numeric"
+                name="document"
+                pattern="[0-9]{6,15}"
+                required
+                type="text"
+              />
             </label>
 
             <label className={styles.field}>
               <span>Correo</span>
-              <input autoComplete="email" name="email" type="email" />
+              <input
+                autoComplete="email"
+                name="email"
+                required
+                type="email"
+              />
             </label>
 
             <label className={styles.field}>
               <span>Celular</span>
-              <input name="phone" type="tel" />
+              <input
+                autoComplete="tel"
+                inputMode="tel"
+                name="phone"
+                pattern="[0-9+ ]{7,16}"
+                required
+                type="tel"
+              />
             </label>
 
             <label className={styles.field}>
               <span>Contraseña</span>
               <input
                 autoComplete="new-password"
+                minLength={8}
                 name="password"
+                required
                 type="password"
               />
             </label>
