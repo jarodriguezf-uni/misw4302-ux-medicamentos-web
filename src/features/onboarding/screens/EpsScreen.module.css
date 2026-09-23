@@ -14,6 +14,7 @@
 
 .card {
   width: min(100%, 560px);
+  min-height: 360px;
   display: flex;
   flex-direction: column;
   padding: 40px;
@@ -121,6 +122,10 @@
 @media (max-width: 767px) {
   .main {
     padding: 32px var(--gutter-md);
+  }
+
+  .card {
+    min-height: auto;
   }
 }
 
