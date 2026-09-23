@@ -8,9 +8,9 @@ export function EpsStatusScreen() {
       <AppHeader action={<span className={styles.step}>Paso 5 de 5</span>} />
       <main className={styles.main} id="main-content">
         <section className={styles.card} aria-labelledby="eps-status-title">
-          <span id="eps-status-title" className={styles.badge}>
+          <h1 id="eps-status-title" className={styles.badge}>
             ✓ Afiliación activa
-          </span>
+          </h1>
           <p className={styles.subtitle}>Ya puedes preparar tus reclamos.</p>
           <ActionButton to="/medicines">Buscar un medicamento</ActionButton>
         </section>
