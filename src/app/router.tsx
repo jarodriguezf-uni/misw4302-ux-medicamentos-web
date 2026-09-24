@@ -16,7 +16,6 @@ import { ConsentScreen } from "../features/onboarding/screens/ConsentScreen";
 import { EpsScreen } from "../features/onboarding/screens/EpsScreen";
 import { EpsStatusScreen } from "../features/onboarding/screens/EpsStatusScreen";
 import { AccessibleRoute } from "../shared/components/AccessibleRoute";
-import { PlaceholderScreen } from "../shared/components/PlaceholderScreen";
 
 interface RouteDefinition {
   path: string;
@@ -63,19 +62,16 @@ const realScreens: Record<string, ReactNode> = {
 };
 
 export const appRouter = createBrowserRouter(
-  routeDefinitions.map((route) => ({
-    path: route.path,
-    element: (
-      <AccessibleRoute title={route.name}>
-        {realScreens[route.path] ?? (
-          <PlaceholderScreen
-            frameLabel={route.frameLabel}
-            name={route.name}
-            visualNodeId={route.visualNodeId}
-            checkpoint={route.checkpoint}
-          />
-        )}
-      </AccessibleRoute>
-    ),
-  })),
+  routeDefinitions.map((route) => {
+    const screen = realScreens[route.path];
+
+    if (screen === undefined) {
+      throw new Error(`Falta implementar la ruta ${route.path}`);
+    }
+
+    return {
+      path: route.path,
+      element: <AccessibleRoute title={route.name}>{screen}</AccessibleRoute>,
+    };
+  }),
 );
