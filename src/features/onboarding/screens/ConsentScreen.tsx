@@ -45,9 +45,6 @@ export function ConsentScreen() {
             </button>
           </form>
 
-          <p className={styles.note}>
-            Sistema E02 · confirmación "Registro guardado".
-          </p>
         </section>
       </main>
     </div>

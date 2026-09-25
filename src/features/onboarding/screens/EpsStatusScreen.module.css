@@ -45,6 +45,12 @@
   font-size: var(--font-size-body);
 }
 
+.action {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .step {
   font-size: var(--font-size-nav);
   font-weight: 500;

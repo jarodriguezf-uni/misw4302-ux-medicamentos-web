@@ -16,11 +16,8 @@
 }
 
 .actions {
-  overflow: hidden;
-  border: 1px solid var(--color-outline-variant);
-  border-radius: 10px;
-  background: var(--color-surface);
-  box-shadow: 0 2px 8px rgb(26 28 28 / 8%);
+  display: grid;
+  gap: 16px;
 }
 
 .action {
@@ -31,18 +28,15 @@
   justify-content: space-between;
   gap: 16px;
   padding: 0 20px;
-  border: 0;
-  border-bottom: 1px solid var(--color-outline-variant);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 10px;
   background: var(--color-surface);
+  box-shadow: 0 2px 8px rgb(26 28 28 / 8%);
   color: var(--color-text);
   cursor: pointer;
   font: inherit;
   font-size: var(--font-size-body);
   text-align: left;
-}
-
-.action:last-child {
-  border-bottom: 0;
 }
 
 .action:hover {
