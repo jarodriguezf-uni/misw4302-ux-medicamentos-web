@@ -57,9 +57,6 @@ export function EpsScreen() {
             Validar afiliación
           </button>
 
-          <p className={styles.note}>
-            Sistema E01 · indicador de carga mientras valida.
-          </p>
         </section>
       </main>
     </div>

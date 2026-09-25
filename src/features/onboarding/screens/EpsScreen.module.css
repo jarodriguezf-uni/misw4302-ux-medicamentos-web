@@ -108,12 +108,6 @@
   cursor: not-allowed;
 }
 
-.note {
-  margin: 16px 0 0;
-  color: var(--color-text-faint);
-  font-size: 11px;
-}
-
 .step {
   font-size: var(--font-size-nav);
   font-weight: 500;

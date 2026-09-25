@@ -12,7 +12,9 @@ export function EpsStatusScreen() {
             ✓ Afiliación activa
           </h1>
           <p className={styles.subtitle}>Ya puedes preparar tus reclamos.</p>
-          <ActionButton to="/medicines">Buscar un medicamento</ActionButton>
+          <div className={styles.action}>
+            <ActionButton to="/medicines">Buscar un medicamento</ActionButton>
+          </div>
         </section>
       </main>
     </div>
